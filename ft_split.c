@@ -6,7 +6,7 @@
 /*   By: abiru <abiru@student.42abudhabi.ae>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 07:42:30 by abiru             #+#    #+#             */
-/*   Updated: 2022/09/25 16:12:48 by abiru            ###   ########.fr       */
+/*   Updated: 2022/09/25 19:20:09 by abiru            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ static int	str_size(const char *s, char c)
 
 char	**ft_split(const char *s, char c)
 {
-	int	i;
-	int	j;
-	int	count;
+	int		i;
+	int		j;
+	int		count;
 	char	**ptr;
 
 	i = 0;
@@ -70,10 +70,10 @@ char	**ft_split(const char *s, char c)
 	return (ptr);
 }
 
-#include <stdio.h>
-int main(void)
-{
-	char	s[50] = "trialanderror";
-	char **ptr;
-	ptr = ft_split(s, 'r');
-}
+// #include <stdio.h>
+// int main(void)
+// {
+// 	char	s[50] = "trialanderror";
+// 	char **ptr;
+// 	ptr = ft_split(s, 'r');
+// }
