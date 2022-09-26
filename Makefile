@@ -6,7 +6,7 @@
 #    By: abiru <abiru@student.42abudhabi.ae>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/24 16:03:13 by abiru             #+#    #+#              #
-#    Updated: 2022/09/25 16:32:26 by abiru            ###   ########.fr        #
+#    Updated: 2022/09/26 15:27:33 by abiru            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,13 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strle
 		ft_strnstr.c ft_atoi.c ft_calloc.c ft_strdup.c ft_substr.c ft_strjoin.c \
 		ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
 		ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_strncmp.c
+
+BONUS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
+			ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
+# ft_lstadd_front ft_lst_size ft_lstlast ft_lstadd_back ft_lstdel_one \
+# 			ft_lstclear ft_lstiter ft_lstmap
+
+BONUS_OBJS	= $(BONUS:.c=.o)
 CFLAGS = -Wextra -Werror -Wall
 OBJS = $(SRCS:.c=.o)
 
@@ -24,7 +31,7 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	ar -rc $(NAME) $(OBJS)
-	ranlib $(NAME)
+	# ranlib $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
@@ -38,3 +45,6 @@ fclean: clean
 re: fclean all
 
 .PHONY: all clean fclean re
+
+bonus:	$(OBJS) $(BONUS_OBJS)
+	ar -rc $(NAME) $(OBJS) $(BONUS_OBJS)
