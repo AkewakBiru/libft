@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abiru <abiru@student.42abudhabi.ae>        +#+  +:+       +#+        */
+/*   By: abiru <abiru@student.42.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 07:42:30 by abiru             #+#    #+#             */
-/*   Updated: 2022/09/25 19:20:09 by abiru            ###   ########.fr       */
+/*   Updated: 2022/09/26 07:20:00 by abiru            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static int	ft_count(const char *s, char c)
 {
@@ -56,6 +55,8 @@ char	**ft_split(const char *s, char c)
 	if (!(ptr = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 2))))
 		return (NULL);
 	i = 0;
+	if (count)
+		count--;
 	while (s[i])
 	{
 		j = 0;

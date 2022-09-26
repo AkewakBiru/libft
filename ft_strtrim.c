@@ -3,24 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abiru <abiru@student.42abudhabi.ae>        +#+  +:+       +#+        */
+/*   By: abiru <abiru@student.42.ae>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 13:03:07 by abiru             #+#    #+#             */
-/*   Updated: 2022/09/25 16:24:31 by abiru            ###   ########.fr       */
+/*   Updated: 2022/09/26 10:06:43 by abiru            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-// static int	ft_strlen(const char *s)
-// {
-// 	static int	i;
-
-// 	i = 0;
-// 	while (s[i] != '\0')
-// 		i++;
-// 	return (i);
-// }
 
 static int	in_set(char s, const char *set)
 {
@@ -49,7 +39,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 		if (in_set(s1[i++], set) == 1)
 			len--;
 	}
-	if (!(ptr = malloc(sizeof(char) * len)))
+	if (!set || set[0] == '\0')
+		return (ft_strdup(s1));
+	ptr = (char *)malloc(sizeof(*s1) * len);
+	if (!ptr)
 		return (NULL);
 	i = 0;
 	len = 0;
@@ -59,6 +52,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 			ptr[len++] = s1[i];
 		i++;
 	}
-	ptr[len] = '\0';
+	ptr[len] = 0;
 	return (ptr);
+}
+
+#include <stdio.h>
+int main()
+{
+	char *str = ft_strtrim("   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ", "Hello \t  Please\n Trim me !");
+	printf("++%s++\n", str);
 }
