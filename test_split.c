@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   test_split.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: abiru <abiru@student.42abudhabi.ae>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 07:42:30 by abiru             #+#    #+#             */
-/*   Updated: 2022/09/28 16:08:09 by abiru            ###   ########.fr       */
+/*   Updated: 2022/09/28 16:08:16 by abiru            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count(const char *s, char c)
+static int ft_count(const char *s, char c)
 {
 	int	i;
 	int	j;
@@ -53,7 +53,7 @@ static char	*ft_cpy(const char *s, char *dst, int start, int end)
 	return (dst);
 }
 
-static char	**ft_additems(const char *s, char c, char **ptr, char *tab)
+static char **ft_additems(const char *s, char c, char **ptr, char *tab)
 {
 	int	i;
 	int	j;
@@ -83,7 +83,7 @@ static char	**ft_additems(const char *s, char c, char **ptr, char *tab)
 char	**ft_split(char const *s, char c)
 {
 	char	**ptr;
-	char	*tab;
+	char *tab;
 
 	ptr = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 1));
 	tab = NULL;
@@ -94,3 +94,17 @@ char	**ft_split(char const *s, char c)
 	ptr[ft_count(s, c)] = 0;
 	return (ptr);
 }
+
+
+// int main()
+// {
+//   char	*s = "olol                     ";
+//   char **res = ft_split(s, ' ');
+//   int i = 0;
+//   printf("%d\n", ft_count(s, ' '));
+//   while (res[i] != 0)
+//   {
+//     printf("%s\n", res[i]);
+//     i++;
+//   }
+// }

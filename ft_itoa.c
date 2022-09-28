@@ -6,7 +6,7 @@
 /*   By: abiru <abiru@student.42abudhabi.ae>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 11:24:24 by abiru             #+#    #+#             */
-/*   Updated: 2022/09/25 16:13:11 by abiru            ###   ########.fr       */
+/*   Updated: 2022/09/28 16:22:57 by abiru            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,7 @@ static int	ft_size(int n)
 		i++;
 	}
 	if (n == 0)
-	{
-		i++;
-		return (i);
-	}
+		return (++i);
 	while (n > 0)
 	{
 		i++;
@@ -34,7 +31,6 @@ static int	ft_size(int n)
 	}
 	return (i);
 }
-
 
 static void	ft_tostr(int nb, char *ptr, int size)
 {
@@ -64,7 +60,10 @@ char	*ft_itoa(int n)
 	char	*ptr;
 
 	if (n == -2147483648)
-		return ("-2147483648");
+	{
+		ptr = ft_strdup("-2147483648");
+		return (ptr);
+	}
 	ptr = malloc(sizeof(char) * (ft_size(n) + 1));
 	if (!ptr)
 		return (NULL);

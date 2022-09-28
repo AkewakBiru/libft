@@ -6,7 +6,7 @@
 #    By: abiru <abiru@student.42abudhabi.ae>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/24 16:03:13 by abiru             #+#    #+#              #
-#    Updated: 2022/09/26 15:27:33 by abiru            ###   ########.fr        #
+#    Updated: 2022/09/28 13:05:51 by abiru            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,6 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strle
 
 BONUS	= ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c \
 			ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
-# ft_lstadd_front ft_lst_size ft_lstlast ft_lstadd_back ft_lstdel_one \
-# 			ft_lstclear ft_lstiter ft_lstmap
 
 BONUS_OBJS	= $(BONUS:.c=.o)
 CFLAGS = -Wextra -Werror -Wall

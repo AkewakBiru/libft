@@ -6,7 +6,7 @@
 /*   By: abiru <abiru@student.42abudhabi.ae>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 12:46:32 by abiru             #+#    #+#             */
-/*   Updated: 2022/09/25 14:46:53 by abiru            ###   ########.fr       */
+/*   Updated: 2022/09/28 16:58:13 by abiru            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;
-
 	i = 0;
-	if ((uintptr_t)dst < (uintptr_t)src)
+
+	if (!dst && !src)
+		return (0);
+	if ((size_t)dst < (size_t)src)
 	{
 		while (i < len)
 		{

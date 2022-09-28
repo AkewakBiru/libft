@@ -6,7 +6,7 @@
 /*   By: abiru <abiru@student.42abudhabi.ae>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 13:03:07 by abiru             #+#    #+#             */
-/*   Updated: 2022/09/26 11:14:21 by abiru            ###   ########.fr       */
+/*   Updated: 2022/09/26 22:17:06 by abiru            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,35 +30,22 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
 	int		len;
+	int		j;
 	char	*ptr;
 
-	i = 0;
 	len = ft_strlen(s1);
-	while (s1[i] != '\0')
-	{
-		if (in_set(s1[i++], set) == 1)
-			len--;
-	}
-	if (!set || set[0] == '\0')
-		return (ft_strdup(s1));
-	ptr = (char *)malloc(sizeof(*s1) * len);
+	j = 0;
+	i = 0;
+	ptr = NULL;
+	while (in_set(s1[i], set) == 1)
+		i++;
+	while (len > i && in_set(s1[len - 1], set) == 1)
+		len--;
+	ptr = (char *)malloc(sizeof(char) * (len - i + 1));
 	if (!ptr)
 		return (NULL);
-	i = 0;
-	len = 0;
-	while (s1[i] != '\0')
-	{
-		if (in_set(s1[i], set) == 0)
-			ptr[len++] = s1[i];
-		i++;
-	}
-	ptr[len] = 0;
+	while (i < len)
+		ptr[j++] = s1[i++];
+	ptr[j] = '\0';
 	return (ptr);
-}
-
-#include <stdio.h>
-int main()
-{
-	char *str = ft_strtrim("   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n  ", "Hello \t  Please\n Trim me !");
-	printf("++%s++\n", str);
 }

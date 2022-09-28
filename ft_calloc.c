@@ -6,7 +6,7 @@
 /*   By: abiru <abiru@student.42abudhabi.ae>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 13:01:42 by abiru             #+#    #+#             */
-/*   Updated: 2022/09/25 17:25:28 by abiru            ###   ########.fr       */
+/*   Updated: 2022/09/28 22:00:02 by abiru            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@ void	*ft_calloc(size_t count, size_t size)
 	void	*ptr;
 
 	ptr = malloc(size * count);
-	if (!ptr || size * count >= SIZE_MAX)
+	if (!ptr)
 		return (NULL);
-	ft_bzero(ptr, count * size);
+	// ft_bzero(ptr, size * count);
+	ft_memset(ptr, 0, size * count);
 	return (ptr);
 }

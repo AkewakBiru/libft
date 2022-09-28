@@ -6,7 +6,7 @@
 /*   By: abiru <abiru@student.42abudhabi.ae>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 14:05:15 by abiru             #+#    #+#             */
-/*   Updated: 2022/09/26 16:08:07 by abiru            ###   ########.fr       */
+/*   Updated: 2022/09/28 22:19:37 by abiru            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	{
 		(*lst) = (*lst) -> next;
 		(*del)(*temp);
-		free(*temp);
 		temp = lst;
 	}
 	lst = NULL;

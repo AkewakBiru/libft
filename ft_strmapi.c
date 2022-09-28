@@ -6,7 +6,7 @@
 /*   By: abiru <abiru@student.42abudhabi.ae>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/25 13:05:12 by abiru             #+#    #+#             */
-/*   Updated: 2022/09/25 14:15:34 by abiru            ###   ########.fr       */
+/*   Updated: 2022/09/28 22:09:41 by abiru            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	i = 0;
 	while (s[i])
 		i++;
-	ptr = malloc(sizeof(char) * i);
+	ptr = malloc(sizeof(*s) * (i + 1));
 	if (!ptr)
 		return (NULL);
 	i = 0;
@@ -29,5 +29,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 		ptr[i] = (*f)(i, s[i]);
 		i++;
 	}
+	ptr[i] = '\0';
 	return (ptr);
 }

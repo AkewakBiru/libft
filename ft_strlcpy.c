@@ -6,7 +6,7 @@
 /*   By: abiru <abiru@student.42abudhabi.ae>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 12:47:34 by abiru             #+#    #+#             */
-/*   Updated: 2022/09/25 17:29:56 by abiru            ###   ########.fr       */
+/*   Updated: 2022/09/28 19:28:38 by abiru            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,5 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		}
 		dst[i] = '\0';
 	}
-	// while (src[i] != '\0')
-	// 	i++;
 	return (ft_strlen(src));
 }
