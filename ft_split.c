@@ -82,8 +82,8 @@ static char	**ft_additems(const char *s, char c, char **ptr, char *tab)
 
 char	**ft_split(char const *s, char c)
 {
-	char	**ptr;
-	char	*tab;
+	char **ptr;
+	char *tab;
 
 	ptr = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 1));
 	tab = NULL;
