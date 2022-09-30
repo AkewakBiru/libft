@@ -6,7 +6,7 @@
 /*   By: abiru <abiru@student.42abudhabi.ae>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 07:42:30 by abiru             #+#    #+#             */
-/*   Updated: 2022/09/28 16:08:09 by abiru            ###   ########.fr       */
+/*   Updated: 2022/09/30 14:09:20 by abiru            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,8 +82,8 @@ static char	**ft_additems(const char *s, char c, char **ptr, char *tab)
 
 char	**ft_split(char const *s, char c)
 {
-	char **ptr;
-	char *tab;
+	char	**ptr;
+	char	*tab;
 
 	ptr = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 1));
 	tab = NULL;
