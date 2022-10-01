@@ -6,7 +6,7 @@
 /*   By: abiru <abiru@student.42abudhabi.ae>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 12:49:04 by abiru             #+#    #+#             */
-/*   Updated: 2022/09/28 19:28:11 by abiru            ###   ########.fr       */
+/*   Updated: 2022/10/01 10:18:15 by abiru            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	dst_len;
 	size_t	src_len;
 
+	src_len = 0;
+	dst_len = 0;
+	if (!dstsize && !src && !dst)
+		return (0);
 	src_len = ft_strlen(src);
 	dst_len = ft_strlen(dst);
 	start = dst_len;
