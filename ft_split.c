@@ -6,7 +6,7 @@
 /*   By: abiru <abiru@student.42abudhabi.ae>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 07:42:30 by abiru             #+#    #+#             */
-/*   Updated: 2022/09/30 14:09:20 by abiru            ###   ########.fr       */
+/*   Updated: 2022/10/02 15:47:36 by abiru            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ static char	**ft_additems(const char *s, char c, char **ptr, char *tab)
 			while (ptr[i])
 				free(ptr[i++]);
 			free(ptr);
-			return (0);
+			return (NULL);
 		}
 		ft_cpy(s, tab, j, find_end(j, s, c));
 		j = find_end(j, s, c);
@@ -85,12 +85,14 @@ char	**ft_split(char const *s, char c)
 	char	**ptr;
 	char	*tab;
 
+	if (!s)
+		return (NULL);
 	ptr = (char **)malloc(sizeof(char *) * (ft_count(s, c) + 1));
 	tab = NULL;
-	if (!ptr || !s)
+	if (!ptr)
 		return (NULL);
 	if (!ft_additems(s, c, ptr, tab))
-		return (0);
+		return (NULL);
 	ptr[ft_count(s, c)] = 0;
 	return (ptr);
 }

@@ -6,7 +6,7 @@
 /*   By: abiru <abiru@student.42abudhabi.ae>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 19:31:14 by abiru             #+#    #+#             */
-/*   Updated: 2022/09/24 12:45:03 by abiru            ###   ########.fr       */
+/*   Updated: 2022/10/02 14:12:12 by abiru            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,5 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-	{
-		*(char *)(s + i) = '\0';
-		i++;
-	}
-	return ;
+	ft_memset(s, 0, n);
 }

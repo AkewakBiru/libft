@@ -6,13 +6,13 @@
 /*   By: abiru <abiru@student.42abudhabi.ae>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 13:28:33 by abiru             #+#    #+#             */
-/*   Updated: 2022/09/26 13:41:43 by abiru            ###   ########.fr       */
+/*   Updated: 2022/10/07 11:10:16 by abiru            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
 	int	i;
 
@@ -22,6 +22,5 @@ int ft_lstsize(t_list *lst)
 		lst = lst -> next;
 		i++;
 	}
-
 	return (i);
 }

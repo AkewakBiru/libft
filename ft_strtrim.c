@@ -6,7 +6,7 @@
 /*   By: abiru <abiru@student.42abudhabi.ae>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 13:03:07 by abiru             #+#    #+#             */
-/*   Updated: 2022/09/26 22:17:06 by abiru            ###   ########.fr       */
+/*   Updated: 2022/10/02 15:47:06 by abiru            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,12 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		j;
 	char	*ptr;
 
-	len = ft_strlen(s1);
 	j = 0;
 	i = 0;
 	ptr = NULL;
+	if (!s1)
+		return (NULL);
+	len = ft_strlen(s1);
 	while (in_set(s1[i], set) == 1)
 		i++;
 	while (len > i && in_set(s1[len - 1], set) == 1)

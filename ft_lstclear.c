@@ -6,7 +6,7 @@
 /*   By: abiru <abiru@student.42abudhabi.ae>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 14:05:15 by abiru             #+#    #+#             */
-/*   Updated: 2022/09/30 13:55:39 by abiru            ###   ########.fr       */
+/*   Updated: 2022/10/02 13:42:29 by abiru            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*temp;
 	t_list	*current;
 
+	if (!lst || !del)
+		return ;
 	temp = *lst;
 	current = *lst;
-	if (lst == NULL || !del)
-		return ;
 	while (current != NULL)
 	{
 		current = current -> next;

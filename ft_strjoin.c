@@ -6,7 +6,7 @@
 /*   By: abiru <abiru@student.42abudhabi.ae>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 13:02:31 by abiru             #+#    #+#             */
-/*   Updated: 2022/09/30 16:26:51 by abiru            ###   ########.fr       */
+/*   Updated: 2022/10/02 13:22:40 by abiru            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	int		s_len;
 	int		ss_len;
 
+	if (!s1)
+		return (NULL);
 	s_len = ft_strlen(s1);
 	ss_len = ft_strlen(s2);
 	ptr = malloc(sizeof(*s1) * (s_len + ss_len + 1));

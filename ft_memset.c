@@ -6,7 +6,7 @@
 /*   By: abiru <abiru@student.42abudhabi.ae>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 12:44:05 by abiru             #+#    #+#             */
-/*   Updated: 2022/09/24 17:23:57 by abiru            ###   ########.fr       */
+/*   Updated: 2022/10/02 16:00:22 by abiru            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,15 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t	i;
+	char	*ptr;
+	size_t	x;
 
-	i = 0;
-	while (i < len)
+	ptr = b;
+	x = 0;
+	while (x < len)
 	{
-		*(char *)(b + i) = c;
-		i++;
+		ptr[x] = c;
+		x++;
 	}
 	return (b);
 }
