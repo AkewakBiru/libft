@@ -6,7 +6,7 @@
 #    By: abiru <abiru@student.42abudhabi.ae>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/24 16:03:13 by abiru             #+#    #+#              #
-#    Updated: 2022/10/07 12:11:46 by abiru            ###   ########.fr        #
+#    Updated: 2022/10/10 16:52:50 by abiru            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,4 +45,4 @@ re: fclean all
 bonus:	$(OBJS) $(BONUS_OBJS)
 	ar -rcs $(NAME) $(OBJS) $(BONUS_OBJS)
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
